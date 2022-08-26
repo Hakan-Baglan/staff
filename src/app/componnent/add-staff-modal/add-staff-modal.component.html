@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-12">
+        <nb-card>
+            <nb-card-header>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        {{ 'Add Staff' | translate }}
+
+                    </div>
+                    <div>
+                        <nb-icon (click)="close()" config="close-outline" status="danger" class="close"></nb-icon>
+                    </div>
+                </div>
+            </nb-card-header>
+
+            <nb-card-body>
+                <form [formGroup]="form">
+                    <div class="row">
+                        <div class="col-4">
+                            <span>{{'Name' | translate}}</span>
+                        </div>
+                        <div class="col-8">
+                            <app-input [type]="'text'" formControlName="name"></app-input>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            <span>{{'Surname' | translate}}</span>
+                        </div>
+                        <div class="col-8">
+                            <app-input [type]="'text'" formControlName="surname"></app-input>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            <span>{{'Email' | translate}}</span>
+                        </div>
+                        <div class="col-8">
+                            <app-input [type]="'text'" formControlName="email"></app-input>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <app-button (click)="send()" class="d-flex justify-content-end" [status]="'primary'"
+                            [sizeStatus]="'medium'" [text]="'Add' | translate" [icon]="'plus-outline'"></app-button>
+                    </div>
+                </form>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

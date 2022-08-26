@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{'Edit' | translate}}</th>
+      <th scope="col">{{'Name' | translate}}</th>
+      <th scope="col">{{'Surname' | translate}}</th>
+      <th scope="col">{{'Email' | translate}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of staffs | async">
+      <th scope="row edit">
+        <app-button [status]="'warning'" (click)="openModal(item)" [outlineStatus]="true" [sizeStatus]="'small'"
+          [icon]="'edit-outline'">
+        </app-button>
+        <app-button class="delete mx-2" (click)="delete(item.id)" [status]="'danger'" [outlineStatus]="true" [sizeStatus]="'small'"
+          [icon]="'trash-outline'">
+        </app-button>
+      </th>
+      <td>{{item.name}}</td>
+      <td>{{item.surname}}</td>
+      <td>{{item.email}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,8 @@
+<input #input fullWidth [type]="type" [value]="value" nbInput (change)="propagateChange($event.target['value'])"
+    (blur)="touched($event)">
+<div *ngIf="hasError('required')" style="color:#a52a2a">
+    {{'This field is required' | translate}}
+</div>
+<div *ngIf="hasError('email')" style="color:#a52a2a">
+    {{'E-mail format is wrong' | translate}}
+</div>

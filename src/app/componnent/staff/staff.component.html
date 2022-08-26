@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <nb-card>
+            <nb-card-header>
+                <div class="d-flex header justify-content-between flex-wrap">
+                    <div class="language">
+                        <nb-select [(ngModel)]="language" (selectedChange)="changeLang($event)">
+                            <nb-option value="en">{{language === 'en' ? 'English': 'İngilizce' }}</nb-option>
+                            <nb-option value="tr">{{language === 'en' ? 'Turkish': 'Türkçe' }}</nb-option>
+                        </nb-select>
+                    </div>
+                    <div  class="modal-btn">
+                        <app-button (click)="openModal()" [text]="'Add Staff' | translate" [outlineStatus]="false"
+                            [sizeStatus]="'medium'" [status]="'success'" [icon]="'plus-outline'"></app-button>
+                    </div>
+                </div>
+            </nb-card-header>
+            <nb-card-body>
+                <app-table></app-table>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
