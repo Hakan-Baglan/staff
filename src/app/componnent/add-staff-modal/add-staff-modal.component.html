@@ -36,13 +36,13 @@
                             <span>{{'Email' | translate}}</span>
                         </div>
                         <div class="col-8">
-                            <app-input [type]="'text'" formControlName="email"></app-input>
+                            <app-input [type]="'email'" formControlName="email"></app-input>
                         </div>
                     </div>
 
                     <div class="row mt-3">
                         <app-button (click)="send()" class="d-flex justify-content-end" [status]="'primary'"
-                            [sizeStatus]="'medium'" [text]="'Add' | translate" [icon]="'plus-outline'"></app-button>
+                            [sizeStatus]="'medium'" [text]="text" [icon]="'plus-outline'"></app-button>
                     </div>
                 </form>
             </nb-card-body>

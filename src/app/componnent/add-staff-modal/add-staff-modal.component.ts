@@ -12,6 +12,7 @@ import { StaffService } from 'src/app/services/staff.service';
 export class AddStaffModalComponent implements OnInit {
   staff!: Staff;
   form!: FormGroup;
+  text: string = '';
   constructor(protected ref: NbDialogRef<AddStaffModalComponent>,
     private fb: FormBuilder,
     private staffService: StaffService) {
@@ -20,11 +21,12 @@ export class AddStaffModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.textLanguage();
     this.initForm();
+
   }
 
   initForm() {
-
     this.form = this.fb.group({
       name: [null, Validators.required],
       surname: [null, Validators.required],
@@ -32,6 +34,15 @@ export class AddStaffModalComponent implements OnInit {
     });
 
     if (this.staff) this.form.patchValue(this.staff);
+  }
+
+  textLanguage() {
+    let language = localStorage.getItem('language');
+    if (this.staff) {
+      this.text = language === 'en' ? 'Edit' : 'Düzenle'
+    } else {
+      this.text = language === 'tr' ? 'Add' : 'Ekle'
+    }
   }
 
   send() {
