@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AppHoverDirective } from './directive/app-hover.directive';
 
 
 export const createTranslateLoader = (http: HttpClient) => new TranslateHttpLoader(http, 'assets/i18n/', `.json`);
@@ -62,7 +63,8 @@ const NEBULAR_MODULES = [
     StaffComponent,
     NotFoundComponent,
     TableComponent,
-    AddStaffModalComponent
+    AddStaffModalComponent,
+    AppHoverDirective
   ],
   imports: [
     BrowserModule,
